@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Task Manager</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="header">
+        <h1>Task Manager</h1>
+      </div>
+      <div class="main">
+        <div class="tasks" id="active-tasks-container">
+          <h2>Active Tasks</h2>
+          <ul id="active-tasks"></ul>
+        </div>
+        <div class="tasks" id="completed-tasks-container">
+          <h2>Completed Tasks</h2>
+          <ul id="completed-tasks"></ul>
+        </div>
+        <div class="tasks" id="deleted-tasks-container">
+          <h2>Deleted Tasks</h2>
+          <ul id="deleted-tasks"></ul>
+        </div>
+      </div>
+      <div class="footer">
+        <input type="text" id="new-task" placeholder="Add a new task..." />
+        <button onclick="addTask()">Add Task</button>
+        <div class="toggle-container">
+          <label for="task-type">Tasks:</label>
+          <select id="task-type" onchange="loadTasks(this.value)">
+            <option value="active-tasks-container">Active</option>
+            <option value="completed-tasks-container">Completed</option>
+            <option value="deleted-tasks-container">Deleted</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
